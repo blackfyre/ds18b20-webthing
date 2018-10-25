@@ -24,9 +24,9 @@ DeviceAddress insideThermometer;
 
 WebThingAdapter *adapter;
 
-const char *bme280Types[] = {nullptr};
-ThingDevice weather("ds18b20", "DS18B20 Temp Sensor", bme280Types);
-ThingProperty weatherTemp("temperature", "", NUMBER, nullptr);
+const char *sensorTypes[] = {"MultiLevelSensor", "Sensor", nullptr};
+ThingDevice weather("ds18b20", "DS18B20 Temp Sensor", sensorTypes);
+ThingProperty weatherTemp("temperature", "The temperature measured by the sensor", NUMBER, "LevelProperty");
 
 void readData(DeviceAddress deviceAddress)
 {
